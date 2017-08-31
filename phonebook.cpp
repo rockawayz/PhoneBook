@@ -4,8 +4,6 @@
 
 using namespace std;
 
-FILE * contacts_db;
-
 // initialize app
 void init() {
     system("TITLE PhoneBook");
@@ -53,7 +51,9 @@ void display_options() {
  	cout << endl;
     system("more contacts.dat");
  }
+
  
+// search keyword in phonebook
 void search() {
     cout << endl << "Enter name to search: ";
     string name; cin >> name;
@@ -62,23 +62,22 @@ void search() {
 
  // handke user's option
 void handle_option() {
-	
     int operationum; cin >> operationum;
-    
+
     switch(operationum) {
         case 1: add(); break;
         case 4: display_contacts(); break;
         case 5: search(); break;
     }
-    
 }
 
+
+
 // run app
+
 int main() {
     init();
     create_db();
     display_options();
     handle_option();
 }
-
-  
