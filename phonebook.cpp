@@ -76,5 +76,6 @@ int main() {
     create_db();
     display_options();
     handle_option();
+    return 0;
 }
 
