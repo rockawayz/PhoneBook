@@ -62,13 +62,9 @@ void search() {
     system(string("find \"" + name + "\" contacts.dat /i").c_str());
 }
 
-void edit() {
+void edit() {}
 
-}
-
-void del() {
-
-}
+void del() {}
 
  // handke user's option
 void handle_option() {
