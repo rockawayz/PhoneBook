@@ -52,7 +52,6 @@ void display_options() {
     system("more contacts.dat");
  }
 
- 
 // search keyword in phonebook
 void search() {
     cout << endl << "Enter name to search: ";
@@ -70,8 +69,6 @@ void handle_option() {
         case 5: search(); break;
     }
 }
-
-
 
 // run app
 int main() {
