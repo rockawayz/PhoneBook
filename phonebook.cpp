@@ -43,12 +43,12 @@ void display_options() {
     string number; cin >> number;
 
     string entry = name + ": " + number;
-	system(string("echo " + entry + " >> contacts.dat").c_str());
+    system(string("echo " + entry + " >> contacts.dat").c_str());
  }
 
  // show all contacts
  void display_contacts() {
- 	cout << endl;
+    cout << endl;
     system("more contacts.dat");
  }
 
@@ -74,7 +74,6 @@ void handle_option() {
 
 
 // run app
-
 int main() {
     init();
     create_db();
