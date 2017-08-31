@@ -4,8 +4,6 @@
 
 using namespace std;
 
-FILE * contacts_db;
-
 // initialize app
 void init() {
     system("TITLE PhoneBook");
