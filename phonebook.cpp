@@ -21,8 +21,6 @@ bool db_exists(char* filePath) {
 void create_db() {
 	if (!(db_exists("contacts.dat")))
         system("type NUL > contacts.dat");
-    
-        system("pause");
 }
 
 // display options
@@ -34,8 +32,6 @@ void display_options() {
         cout << "\t" << count++ << ". " << options[i] << endl;
     }
     cout << "\tAny other number to quit" << endl << endl << "Enter number for operation: ";
-
-    system("pause");
 }
 
 // add to contact
@@ -48,22 +44,18 @@ void display_options() {
 
     string entry = name + ": " + number;
     system(string("echo " + entry + " >> contacts.dat").c_str());
-    
-    system("pause");
  }
 
  // show all contacts
  void display_contacts() {
  	cout << endl;
     system("more contacts.dat");
-    system("pause");
  }
  
 void search() {
     cout << endl << "Enter name to search: ";
     string name; cin >> name;
     system(string("find \"" + name + "\" contacts.dat /i").c_str());
-    system("pause");
 }
 
  // handke user's option
@@ -76,8 +68,6 @@ void handle_option() {
         case 4: display_contacts(); break;
         case 5: search(); break;
     }
-    system("pause");
-    
 }
 
 // run app
