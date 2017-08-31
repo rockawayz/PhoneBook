@@ -59,12 +59,22 @@ void search() {
     system(string("find \"" + name + "\" contacts.dat /i").c_str());
 }
 
+void edit() {
+
+}
+
+void del() {
+
+}
+
  // handke user's option
 void handle_option() {
     int operationum; cin >> operationum;
 
     switch(operationum) {
         case 1: add(); break;
+        case 2: del(); break;
+        case 3: edit(); break;
         case 4: display_contacts(); break;
         case 5: search(); break;
     }
