@@ -4,6 +4,8 @@
 
 using namespace std;
 
+FILE * contacts_db;
+
 // initialize app
 void init() {
     system("TITLE PhoneBook");
@@ -20,7 +22,7 @@ bool db_exists(char* filePath) {
  // create new db if "contacts.dat" does not exist
 void create_db() {
 	if (!(db_exists("contacts.dat")))
-        system("type NUL > contacts.dat");
+		system("type NUL > contacts.dat");
 }
 
 // display options
@@ -43,7 +45,7 @@ void display_options() {
     string number; cin >> number;
 
     string entry = name + ": " + number;
-    system(string("echo " + entry + " >> contacts.dat").c_str());
+	system(string("echo " + entry + " >> contacts.dat").c_str());
  }
 
  // show all contacts
@@ -68,6 +70,7 @@ void handle_option() {
         case 4: display_contacts(); break;
         case 5: search(); break;
     }
+    
 }
 
 // run app
@@ -76,6 +79,6 @@ int main() {
     create_db();
     display_options();
     handle_option();
-    return 0;
 }
 
+  
