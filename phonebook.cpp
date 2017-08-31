@@ -42,7 +42,10 @@ void display_options() {
     cout << endl << "Enter number: "; 
     string number; cin >> number;
 
+    // create a contact entry
     string entry = name + ": " + number;
+
+    // append new contact entry to db
     system(string("echo " + entry + " >> contacts.dat").c_str());
  }
 
