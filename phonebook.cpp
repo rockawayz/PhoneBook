@@ -62,9 +62,20 @@ void search() {
     system(string("find \"" + name + "\" contacts.dat /i").c_str());
 }
 
-void edit() {}
+// edit contact
+void edit() {
+    cout << endl << "Enter name to edit: ";
+    string name; cin >> name;
 
-void del() {}
+    // check first whether contact name exists
+    system(string("find \"" + name + "\" contacts.dat /i /c & if %errorlevel% equ 0 echo contact does not exists in PhoneBook").c_str());
+}
+
+// delete contact
+void del() {
+    cout << endl << "Enter name to delete: ";
+    string name; cin >> name;
+}
 
  // handke user's option
 void handle_option() {
