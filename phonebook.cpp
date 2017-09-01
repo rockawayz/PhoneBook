@@ -71,7 +71,6 @@ void edit() {
 
     // check first whether contact name exists
     system(string("find \"" + name + "\" contacts.dat /i /c & echo. & if %errorlevel% equ 0 echo " + name + " does not exists in PhoneBook. & echo.").c_str());
-    system("echo. & more contacts.dat");
     
     cout << "Enter number for operation: ";
     int operationum; cin >> operationum;
