@@ -51,8 +51,7 @@ void display_options() {
 
  // show all contacts
  void display_contacts() {
-    cout << endl;
-    system("more contacts.dat");
+    system("echo. & more contacts.dat");
  }
 
 // search keyword in phonebook
@@ -68,7 +67,7 @@ void edit() {
     string name; cin >> name;
 
     // check first whether contact name exists
-    system(string("find \"" + name + "\" contacts.dat /i /c & echo. & if %errorlevel% equ 0 echo Contact does not exists in PhoneBook.").c_str());
+    system(string("find \"" + name + "\" contacts.dat /i /c & echo. & if %errorlevel% equ 0 echo " + name + " does not exists in PhoneBook.").c_str());
 }
 
 // delete contact
