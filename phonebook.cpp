@@ -5,9 +5,7 @@
 using namespace std;
 
 // initialize app
-void init() {
-    system("TITLE PhoneBook");
-}
+void init() { system("TITLE PhoneBook"); }
 
 // file existence checker
 bool db_exists(char* filePath) {
@@ -76,11 +74,7 @@ void edit() {
     int operationum; cin >> operationum;
 
     switch(operationum) {
-        case 1: add(); break;
-        case 2: del(); break;
-        case 3: edit(); break;
-        case 4: display_contacts(); break;
-        case 5: search(); break;
+        case 1: add(); break; case 2: del(); break; case 3: edit(); break; case 4: display_contacts(); break; case 5: search(); break;        
     }
 }
 
@@ -89,19 +83,12 @@ void handle_option() {
     int operationum; cin >> operationum;
 
     switch(operationum) {
-        case 1: add(); break;
-        case 2: del(); break;
-        case 3: edit(); break;
-        case 4: display_contacts(); break;
-        case 5: search(); break;
+        case 1: add(); break; case 2: del(); break; case 3: edit(); break; case 4: display_contacts(); break; case 5: search(); break;
     }
 }
 
 // run app
 int main() {
-    init();
-    create_db();
-    display_options();
-    handle_option();
+    init(); create_db(); display_options(); handle_option();
 }
 
