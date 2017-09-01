@@ -36,11 +36,8 @@ void display_options() {
 
 // add to contact
  void add() {
-    cout << endl << "Enter name: "; 
-    string name; cin >> name;
-
-    cout << endl << "Enter number: "; 
-    string number; cin >> number;
+    cout << endl << "Enter name: "; string name; cin >> name;
+    cout << endl << "Enter number: "; string number; cin >> number;
 
     // create a contact entry
     string entry = name + ": " + number;
@@ -61,19 +58,30 @@ void search() {
     system(string("find \"" + name + "\" contacts.dat /i").c_str());
 }
 
+// delete contact
+void del() {
+    cout << endl << "Enter name to delete: ";
+    string name; cin >> name;
+}
+
 // edit contact
 void edit() {
     cout << endl << "Enter name to edit: ";
     string name; cin >> name;
 
     // check first whether contact name exists
-    system(string("find \"" + name + "\" contacts.dat /i /c & echo. & if %errorlevel% equ 0 echo " + name + " does not exists in PhoneBook.").c_str());
-}
+    system(string("find \"" + name + "\" contacts.dat /i /c & echo. & if %errorlevel% equ 0 echo " + name + " does not exists in PhoneBook. & echo.").c_str());
+    
+	system("echo. & more contacts.dat");
+    int operationum; cin >> operationum;
 
-// delete contact
-void del() {
-    cout << endl << "Enter name to delete: ";
-    string name; cin >> name;
+    switch(operationum) {
+        case 1: add(); break;
+        case 2: del(); break;
+        case 3: edit(); break;
+        case 4: display_contacts(); break;
+        case 5: search(); break;
+    }
 }
 
  // handke user's option
@@ -96,3 +104,4 @@ int main() {
     display_options();
     handle_option();
 }
+
