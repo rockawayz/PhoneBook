@@ -68,7 +68,7 @@ void edit() {
     string name; cin >> name;
 
     // check first whether contact name exists
-    system(string("find \"" + name + "\" contacts.dat /i /c & if %errorlevel% equ 0 echo contact does not exists in PhoneBook").c_str());
+    system(string("find \"" + name + "\" contacts.dat /i /c & echo. & if %errorlevel% equ 0 echo Contact does not exists in PhoneBook.").c_str());
 }
 
 // delete contact
