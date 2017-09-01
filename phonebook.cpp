@@ -45,15 +45,13 @@ void display_options() {
  }
 
  // show all contacts
- void display_contacts() {
-    system("echo. & more contacts.dat");
- }
+ void display_contacts() { system("echo. & more contacts.dat"); }
 
 // search keyword in phonebook
 void search() {
     cout << endl << "Enter name to search: ";
     string name; cin >> name;
-    system(string("find \"" + name + "\" contacts.dat /i").c_str());
+    system(string("find \"" + name + "\" contacts.dat /i & echo.").c_str());
 }
 
 // delete contact
@@ -72,7 +70,6 @@ void edit() {
     
     cout << "Enter number for operation: ";
     int operationum; cin >> operationum;
-
     switch(operationum) {
         case 1: add(); break; case 2: del(); break; case 3: edit(); break; case 4: display_contacts(); break; case 5: search(); break;        
     }
@@ -81,7 +78,6 @@ void edit() {
  // handke user's option
 void handle_option() {
     int operationum; cin >> operationum;
-
     switch(operationum) {
         case 1: add(); break; case 2: del(); break; case 3: edit(); break; case 4: display_contacts(); break; case 5: search(); break;
     }
